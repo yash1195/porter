@@ -90,7 +90,7 @@ function getAssetAction(token_id){
 function checkCloud(bucket){
 	return Q.promise(function(resolve,reject){
 		if(_.isEmpty(bucket)){
-			resolve();
+			resolve(0);
 		}
 		else{
 			try{
@@ -100,10 +100,10 @@ function checkCloud(bucket){
 					bucket: bucket.bucket
 				});
 				delete client;
-				resolve();
+				resolve(0);
 			}
 			catch(e){
-				reject();
+				reject(0);
 			}
 		}
 	});
