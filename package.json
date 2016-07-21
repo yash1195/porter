@@ -1,0 +1,38 @@
+{
+  "name": "porter",
+  "version": "0.0.0",
+  "description": "Simple, Unobtrusive File uploader (Local, Amazon S3)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yash1195/porter.git"
+  },
+  "keywords": [
+    "Node",
+    "File",
+    "upload",
+    "amazon",
+    "s3",
+    "local"
+  ],
+  "dependencies": {
+    "ejs": "2.3.4",
+    "include-all": "~0.1.6",
+    "mongodb": "^2.2.4",
+    "mongoose": "^4.5.5",
+    "q": "^1.4.1",
+    "rc": "1.0.1",
+    "sails": "~0.12.3",
+    "sails-disk": "~0.10.9",
+    "shortid": "^2.2.6"
+  },
+  "author": "Yash Choukse <yash.choukse123@gmail.com> (http://zeko.in)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yash1195/porter/issues"
+  },
+  "homepage": "https://github.com/yash1195/porter#readme"
+}
