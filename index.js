@@ -4,6 +4,8 @@ var Q		  		= require('q');
 var http 	  		= require('http');
 var logFlag			= true; // porter should log or not
 var _				= require('lodash');
+var knox			= require('knox');
+
 module.exports = {
 	addAsset: addAssetAction,
 	getAsset: getAssetAction,

@@ -110,8 +110,13 @@ PorterRecord.find(criteria,function(err,records){
 			});
 		});
 	}
-	else{
+	else if(records.length == 0){
 		porterDaemonLog("No records available for porting to cloud");
+		process.exit(0);
+	}
+	else{
+		console.log(err);
+		porterDaemonLog("Error - No DB Connection");
 		process.exit(0);
 	}
 });
