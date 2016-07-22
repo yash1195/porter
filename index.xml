@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>porter-js</title>
+    <link>http://localhost:8888/porter/</link>
+    <description>Recent content on porter-js</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Jul 2016 17:42:42 +0530</lastBuildDate>
+    <atom:link href="http://localhost:8888/porter/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>welcome</title>
+      <link>http://localhost:8888/porter/post/welcome/</link>
+      <pubDate>Thu, 21 Jul 2016 17:42:42 +0530</pubDate>
+      
+      <guid>http://localhost:8888/porter/post/welcome/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>porter-js</title>
+      <link>http://localhost:8888/porter/</link>
+      <pubDate>Tue, 08 Mar 2016 21:07:13 +0100</pubDate>
+      
+      <guid>http://localhost:8888/porter/</guid>
+      <description>
+
+&lt;h2 id=&#34;documentation-for-porter-js&#34;&gt;Documentation for porter-js&lt;/h2&gt;
+
+&lt;p&gt;porter-js is &lt;a href=&#34;http://sailsjs.org/&#34;&gt;Sails.js&lt;/a&gt; compatible file uploading module for &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;Node.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;porter-js can be easily integrated with any Sails.js (will support other frameworks in the future).&lt;/p&gt;
+
+&lt;p&gt;porter&amp;rsquo;s purpose is to upload files to a sails server locally. You can opt to transfer the files to Amazon S3. This transfer will &lt;strong&gt;NOT&lt;/strong&gt; be done by the main Node.js server. A different node process will do all the heavy lifting. Meanwhile, the file will always be available for usage.
+Just add an asset to porter and the rest will be done  for you.&lt;/p&gt;
+
+&lt;p&gt;Currently, it needs &lt;a href=&#34;https://www.mongodb.com/&#34;&gt;MongoDB&lt;/a&gt;. (will support other dbs in future releases)&lt;/p&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Upload images from user to sails server. ( Saved locally )&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Once an image is added, a token is returned. Only this token is required to fetch back the image.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Background node process transfers images from local storage to Amazon S3&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Files are deleted from local storage once transferred.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Image available for usage at all times.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;Go to your sails project.&lt;/p&gt;
+
+&lt;p&gt;Example&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;/porter_demo 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Install with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ npm install --save porter-js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;Sample HTML form&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+	...
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+	&amp;lt;form action=&amp;quot;/test&amp;quot; method=&amp;quot;post&amp;quot; enctype=&amp;quot;multipart/form-data&amp;quot;&amp;gt;
+		&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;file1&amp;quot;&amp;gt;
+		&amp;lt;button type=&amp;quot;submit&amp;quot;&amp;gt;Upload&amp;lt;/button&amp;gt;
+	&amp;lt;/form&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;run-the-background-process-which-will-upload-files-to-the-cloud&#34;&gt;Run the background process which will upload files to the cloud&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;
+Make sure mongodb is running
+
+Go to your sails project
+
+$ cd porter_demo
+
+Go to the porter-js module
+$ cd node_modules/porter-js
+$ sudo forever start --minUptime 1 --spinSleepTime 1 porter_service.js
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;to-require-porter-js&#34;&gt;To require porter-js&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;var porter = require(&#39;porter-js&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;porter-logs&#34;&gt;porter logs&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;porter.logs(false);		// Logs can be set to false
+				// Logging is enabled by default
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;adding-a-file-saved-only-at-the-server&#34;&gt;Adding a file (Saved only at the server)&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;var obj = req.file(&#39;file1&#39;);
+
+porter
+	.addAsset(obj)
+	.then(function(token){
+		console.log(token); // r159wEJd
+						// Porter token for the uploaded file
+	}); 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;.addAsset returns a bluebird promise which resolves into a token&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;porter uses Skipper to implement streaming file uploads.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;retrieving-the-file&#34;&gt;Retrieving the file&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;
+porter
+	.getAsset(obj)
+	.then(function(data){
+		console.log(data);	//  response
+	}); 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response will be of the form&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;{
+  &amp;quot;isResized&amp;quot;: false,
+  &amp;quot;inCloud&amp;quot;: false,
+  &amp;quot;token_id&amp;quot;: &amp;quot;r159wEJd&amp;quot;,
+  &amp;quot;url&amp;quot;: &amp;quot;/Users/yashchoukse/Documents/codes/web/porter_demo/.tmp/uploads/671fa97c.jpg&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;.getAsset returns a bluebird promise which resolves into file data&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;adding-a-file-amazon-s3-cloud&#34;&gt;Adding a file (Amazon S3 Cloud)&lt;/h3&gt;
+
+&lt;p&gt;Configuration needs to be set for Amazon S3 bucket&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;var bucket = {
+	key: &#39;AMAZON_S3_KEY&#39;,
+	secret: &#39;AMAZON_S3_SECRET&#39;,
+	bucket: &#39;AMAZON_S3_BUCKET&#39;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Adding the file&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;var obj = req.file(&#39;file1&#39;);
+
+porter
+	.addAsset(obj,bucket)
+	.then(function(token){
+		console.log(token);	// r159wEJd - Porter token for the uploaded file
+	}); 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;.addAsset returns a bluebird promise which resolves into a token&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;porter uses Skipper to implement streaming file uploads.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;retrieving-the-file-1&#34;&gt;Retrieving the file&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;
+porter
+	.getAsset(obj)
+	.then(function(data){
+		console.log(data);	//  response
+	}); 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response will be of the form&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;{
+  &amp;quot;isResized&amp;quot;: false,
+  &amp;quot;inCloud&amp;quot;: true,
+  &amp;quot;token_id&amp;quot;: &amp;quot;S1tN2N1_&amp;quot;,
+  &amp;quot;url&amp;quot;: &amp;quot;https://s3.amazonaws.com/AMAZON_S3_BUCKET/raw_images/b25b4f9c-44c1.jpg&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;acknowledgements&#34;&gt;Acknowledgements&lt;/h2&gt;
+
+&lt;p&gt;A big thank you to ##&lt;a href=&#34;https://github.com/ravitejaobelisk&#34;&gt;Ravi teja&lt;/a&gt;. He mentored and helped me in creating this library.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, a big thank you to &lt;a href=&#34;http://www.nineleaps.com/&#34;&gt;Nineleaps Technology Solutions&lt;/a&gt; for supporting open source development of this module.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, thanks to &lt;a href=&#34;https://gihub.com/spf13&#34;&gt;Steve Francia&lt;/a&gt; for creating Hugo and the &lt;a href=&#34;https://github.com/spf13/hugo/graphs/contributors&#34;&gt;awesome community&lt;/a&gt; around the hugo project.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
