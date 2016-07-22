@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>porter-js</title>
-    <link>http://localhost:8888/porter/</link>
+    <link>https://yash1195.github.io/porter/</link>
     <description>Recent content on porter-js</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 21 Jul 2016 17:42:42 +0530</lastBuildDate>
-    <atom:link href="http://localhost:8888/porter/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yash1195.github.io/porter/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>welcome</title>
-      <link>http://localhost:8888/porter/post/welcome/</link>
+      <link>https://yash1195.github.io/porter/post/welcome/</link>
       <pubDate>Thu, 21 Jul 2016 17:42:42 +0530</pubDate>
       
-      <guid>http://localhost:8888/porter/post/welcome/</guid>
+      <guid>https://yash1195.github.io/porter/post/welcome/</guid>
       <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -33,10 +33,10 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&g
     
     <item>
       <title>porter-js</title>
-      <link>http://localhost:8888/porter/</link>
+      <link>https://yash1195.github.io/porter/</link>
       <pubDate>Tue, 08 Mar 2016 21:07:13 +0100</pubDate>
       
-      <guid>http://localhost:8888/porter/</guid>
+      <guid>https://yash1195.github.io/porter/</guid>
       <description>
 
 &lt;h2 id=&#34;documentation-for-porter-js&#34;&gt;Documentation for porter-js&lt;/h2&gt;
